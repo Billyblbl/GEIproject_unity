@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Playground.unity
     guid: 231ae250ed9936e43b79493d449f85fc
+  - enabled: 1
+    path: Assets/Scenes/AI Playground.unity
+    guid: 6618b5bfc0c823244b07aa4b54757d60
   m_configObjects: {}
