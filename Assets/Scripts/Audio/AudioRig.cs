@@ -25,10 +25,10 @@ public class AudioRig : MonoBehaviour
        }
     }
 
-    public void Play (string name)
+    public void Play (string name, int index = 0)
     {
-        AudioSourceParameters it = Array.Find(audioSources, audio => audio.name == name);
-        it.audioSource.Play();
+        AudioSourceParameters[] it = Array.FindAll(audioSources, audio => audio.name == name);
+        it[index].audioSource.Play();
     }
 
     public void PlayRandom (string name)
