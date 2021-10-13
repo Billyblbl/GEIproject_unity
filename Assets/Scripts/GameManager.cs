@@ -18,17 +18,23 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void OnEnable() {
-		SceneManager.LoadScene(initalScene);
+		if (!Application.isEditor)
+			SceneManager.LoadScene(initalScene);
 	}
 
 	public void LoadLevel(SceneTransition transition) {
 		StartCoroutine(LoadLevelAsync(transition));
 	}
 
+	public void ExitGame() {
+		Application.Quit();
+		Debug.LogWarning("Will not quit while in editor mode");
+	}
+
 	public IEnumerator Fade(bool reverse = false) {
-		float startTime = Time.time;
-		while (Time.time - startTime < fadeTime) {
-			var value = (Time.time - startTime) / fadeTime;
+		float startTime = Time.unscaledTime;
+		while (Time.unscaledTime - startTime < fadeTime) {
+			var value = (Time.unscaledTime - startTime) / fadeTime;
 			fadeLayer.color = fadeTransitionGradient.Evaluate(reverse ? 1 - value : value);
 			yield return null;
 		}
