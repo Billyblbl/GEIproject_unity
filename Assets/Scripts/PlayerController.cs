@@ -63,7 +63,8 @@ public class PlayerController : MonoBehaviour {
 	public bool grounded { get {
 		if (Time.time != lastGroundCheck)
 			lastGroundCheck = Time.time;
-			_grounded = Physics.Raycast(transform.position + Vector3.down * groundCheckOffset, Vector3.down, groundCheckDistance);
+			RaycastHit hit;
+			_grounded = Physics.SphereCast(transform.position, 0.3f, Vector3.down, out hit, groundCheckOffset + groundCheckDistance);
 		return _grounded;
 	} }
 
