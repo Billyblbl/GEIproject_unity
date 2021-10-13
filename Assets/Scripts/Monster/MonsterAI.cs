@@ -4,22 +4,37 @@ using UnityStandardAssets.Characters.ThirdPerson;
 
 public class MonsterAI : MonoBehaviour
 {
-    [SerializeField] private Transform movePositionTransform;
+
+	public GlobalInterface<PlayerManager> playerManager;
+    // [SerializeField] private Transform movePositionTransform;
     private NavMeshAgent navMeshAgent;
     public ThirdPersonCharacter character;
     private Animator animator;
-    private PlayerController player;
+    // private PlayerController player;
     private AudioRig audioManager;
     private float lastAttack;
     [SerializeField] private float attackCooldown = 2;
 
+	bool attacking = false;
+
+	public void OnPlayerInRange() {
+		Debug.Log("In range");
+        character.Move(Vector3.zero, false, false);
+		attacking = true;
+		navMeshAgent.destination = transform.position;
+	}
+
+	public void OnPlayerOutOfRange() {
+		Debug.Log("Out of range");
+		attacking = false;
+	}
+
     private void Awake() {
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        //not the good way to do it i need to see with guillaume about that
-        player = movePositionTransform.GetComponent<PlayerController>();
         audioManager = GetComponent<AudioRig>();
     }
+
 
     private void Start () {
         navMeshAgent.isStopped = true;
@@ -28,23 +43,18 @@ public class MonsterAI : MonoBehaviour
     }
 
     private void Update() {
-        navMeshAgent.destination = movePositionTransform.position;
-        if (navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance)
-        {
-            character.Move(navMeshAgent.desiredVelocity, false, false);
-        } else
-        {
-            character.Move(Vector3.zero, false, false);
-            if (player.alive && (Time.time - lastAttack > attackCooldown)) {
-                audioManager.PlayRandom("Attack");
-                
-                animator.SetTrigger("Attack");
-                lastAttack = Time.time;
-            }
+		if (!playerManager.currentInstance.playerEntity.alive) return;
+		if (!attacking) {
+	        navMeshAgent.destination = playerManager.currentInstance.playerEntity.transform.position;
+			character.Move(navMeshAgent.desiredVelocity, false, false);
+		} else if ((Time.time - lastAttack > attackCooldown)) {
+            audioManager.PlayRandom("Attack");
+            animator.SetTrigger("Attack");
+            lastAttack = Time.time;
         }
-    
 
     }
+
     public void Spawn() {
         audioManager.Play("SpawnCry");
     }
@@ -52,9 +62,10 @@ public class MonsterAI : MonoBehaviour
         navMeshAgent.isStopped = false;
     }
     public void Attack() {
-        if( navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance) {
+        if (playerManager.currentInstance.playerEntity.alive && attacking) {
             audioManager.Play("AttackHit");
-            player.alive = false;
+            playerManager.currentInstance.playerEntity.alive = false;
+			attacking = false;
         }
     }
     

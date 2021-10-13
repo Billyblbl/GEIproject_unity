@@ -26,8 +26,8 @@ public class Options : MonoBehaviour {
 		AudioListener.volume = masterVolume;
 	}
 
-	private void Update() {
-		Debug.Log(string.Format("master volume : {0} | controlScheme : {1}", masterVolume, controlsScheme));
-	}
+	// private void Update() {
+	// 	Debug.Log(string.Format("master volume : {0} | controlScheme : {1}", masterVolume, controlsScheme));
+	// }
 
 }

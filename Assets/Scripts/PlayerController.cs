@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour {
 		// lantern.zMotion = alive ? ConfigurableJointMotion.Locked : ConfigurableJointMotion.Free;
 		if (lantern.connectedBody) lantern.connectedBody.transform.parent = alive ? transform : null;
 		lantern.connectedBody = null;
+		playerManager.currentInstance.lives--;
 		// GameManager.globalInstance.Fade();
 	}}
 	public bool grounded { get {
@@ -90,7 +91,6 @@ public class PlayerController : MonoBehaviour {
 
 		//TODO damage system
 		if (Input.GetKeyDown(KeyCode.Return)) {
-			playerManager.currentInstance.lives--;
 			alive = false;
 		}
 

@@ -28,7 +28,7 @@ public class PlayerManager : MonoBehaviour {
 	}
 
 	private void Start() {
-		if (!ui.currentInstance) return;
+		if (!ui || !ui.currentInstance) return;
 		ui.currentInstance.displayedLives = lives;
 		ui.currentInstance.resetTimer(true);
 		ui.currentInstance.pauseMenu.gameObject.SetActive(false);
