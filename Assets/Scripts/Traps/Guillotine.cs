@@ -5,7 +5,6 @@ public class Guillotine : MonoBehaviour
 {
     [Range(0f, 5f)]
     public  float delay = 0;
-    private PlayerController player;
     private AudioRig audioManager;
     private Animator animator;
 
@@ -28,7 +27,7 @@ public class Guillotine : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            player = other.GetComponent<PlayerController>();
+            var player = other.GetComponent<PlayerController>();
             player.alive = false;
         }
     }
