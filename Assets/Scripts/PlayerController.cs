@@ -118,11 +118,15 @@ public class PlayerController : MonoBehaviour {
 
 		rb.velocity = movementVector + keptVelocity;
 
-		var currentPitch = Vector3.SignedAngle(movementForward, transform.forward, -transform.right);
-		var newAngle = Mathf.Clamp(currentPitch + aimInputVec.y * aimSensitivity, minPitch, maxPitch);
+		if (!Cursor.visible) {
 
-		transform.RotateAround(transform.position, Vector3.up, aimInputVec.x * aimSensitivity);
-		transform.RotateAround(transform.position, -transform.right, newAngle - currentPitch);
+			var currentPitch = Vector3.SignedAngle(movementForward, transform.forward, -transform.right);
+			var newAngle = Mathf.Clamp(currentPitch + aimInputVec.y * aimSensitivity, minPitch, maxPitch);
+
+			transform.RotateAround(transform.position, Vector3.up, aimInputVec.x * aimSensitivity);
+			transform.RotateAround(transform.position, -transform.right, newAngle - currentPitch);
+
+		}
 	}
 
 }
