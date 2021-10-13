@@ -2418,7 +2418,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
 --- !u!1 &506367741
 GameObject:
@@ -6247,11 +6247,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!1 &1348797565 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2726509140990354947, guid: 5055b6c3a3336e74f985d302341cb447, type: 3}
-  m_PrefabInstance: {fileID: 2726509141680404195}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1351329769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8658,90 +8653,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1912774258 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2726509141408035735, guid: 5055b6c3a3336e74f985d302341cb447, type: 3}
-  m_PrefabInstance: {fileID: 2726509141680404195}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1912774267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1912774258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e31fa94ed5b404994f497c2b425086, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSources:
-  - name: Attack
-    audioSource: {fileID: 0}
-    audioSourceObject: {fileID: 1348797565}
-    audioClip: {fileID: 8300000, guid: f334026d9de96a44e91ebc0aaa3fe8e2, type: 3}
-    playOnAwake: 0
-    isSound3D: 1
-    volume: 0.5
-    pitch: 1
-    dopplerLevel: 0
-    minDistance: 0.5
-    maxDistance: 10
-  - name: Attack
-    audioSource: {fileID: 0}
-    audioSourceObject: {fileID: 1348797565}
-    audioClip: {fileID: 8300000, guid: 1e526af19ec3da64986ad71877edf8e3, type: 3}
-    playOnAwake: 0
-    isSound3D: 1
-    volume: 0.5
-    pitch: 1
-    dopplerLevel: 0
-    minDistance: 0.5
-    maxDistance: 10
-  - name: Attack
-    audioSource: {fileID: 0}
-    audioSourceObject: {fileID: 1348797565}
-    audioClip: {fileID: 8300000, guid: c873bcc644006934dbc7569d074f69b0, type: 3}
-    playOnAwake: 0
-    isSound3D: 1
-    volume: 0.5
-    pitch: 1
-    dopplerLevel: 0
-    minDistance: 0.5
-    maxDistance: 10
-  - name: AttackHit
-    audioSource: {fileID: 0}
-    audioSourceObject: {fileID: 0}
-    audioClip: {fileID: 8300000, guid: 2123d1463dd14d248928826baee055a5, type: 3}
-    playOnAwake: 0
-    isSound3D: 1
-    volume: 0.5
-    pitch: 1
-    dopplerLevel: 0
-    minDistance: 0.5
-    maxDistance: 10
-  - name: FootStep
-    audioSource: {fileID: 0}
-    audioSourceObject: {fileID: 0}
-    audioClip: {fileID: 8300000, guid: ecd647025e0a3c04fbd5829fff509e09, type: 3}
-    playOnAwake: 0
-    isSound3D: 1
-    volume: 1
-    pitch: 1
-    dopplerLevel: 0
-    minDistance: 0.5
-    maxDistance: 10
-  - name: SpawnCry
-    audioSource: {fileID: 0}
-    audioSourceObject: {fileID: 1348797565}
-    audioClip: {fileID: 8300000, guid: b5db710688b4a6145b79673a0318a312, type: 3}
-    playOnAwake: 0
-    isSound3D: 1
-    volume: 1
-    pitch: 1
-    dopplerLevel: 0
-    minDistance: 0.5
-    maxDistance: 10
 --- !u!43 &1922735099
 Mesh:
   m_ObjectHideFlags: 0
@@ -9217,18 +9128,22 @@ PrefabInstance:
     - target: {fileID: 2726509141408035743, guid: 5055b6c3a3336e74f985d302341cb447, type: 3}
       propertyPath: audioSources.Array.data[3].audioSourceObject
       value: 
-      objectReference: {fileID: 1348797565}
+      objectReference: {fileID: 0}
     - target: {fileID: 2726509141408035743, guid: 5055b6c3a3336e74f985d302341cb447, type: 3}
       propertyPath: audioSources.Array.data[4].audioSourceObject
       value: 
-      objectReference: {fileID: 1348797565}
+      objectReference: {fileID: 0}
     - target: {fileID: 2726509141408035743, guid: 5055b6c3a3336e74f985d302341cb447, type: 3}
       propertyPath: audioSources.Array.data[5].audioSourceObject
       value: 
-      objectReference: {fileID: 1348797565}
+      objectReference: {fileID: 0}
     - target: {fileID: 2726509141408035743, guid: 5055b6c3a3336e74f985d302341cb447, type: 3}
       propertyPath: audioSources.Array.data[6].audioSourceObject
       value: 
-      objectReference: {fileID: 1348797565}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690144580185242095, guid: 5055b6c3a3336e74f985d302341cb447, type: 3}
+      propertyPath: movePositionTransform
+      value: 
+      objectReference: {fileID: 1119957949}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5055b6c3a3336e74f985d302341cb447, type: 3}
