@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
+  m_AmbientSkyColor: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -21533,6 +21533,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4593920025342268718, guid: d290bce7f8e99a0439a5e843fe3b8c42, type: 3}
+      propertyPath: invincible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4593920025342268719, guid: d290bce7f8e99a0439a5e843fe3b8c42, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -0.17898911
@@ -21746,7 +21750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &843809143
 Light:
   m_ObjectHideFlags: 0
@@ -21816,13 +21820,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843809142}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.8424001, y: 0.3485031, z: 0.10579011, w: 0.39713487}
+  m_LocalPosition: {x: 395.4, y: -30.6, z: 121.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 143.462, y: -34.496002, z: -56.65399}
 --- !u!43 &863495321
 Mesh:
   m_ObjectHideFlags: 0
@@ -23855,7 +23859,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-65618
+  m_Name: pb_Mesh-233570
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
