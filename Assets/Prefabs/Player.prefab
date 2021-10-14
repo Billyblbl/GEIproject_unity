@@ -745,6 +745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 11400000, guid: 43a4a456dddd2d54b89c62f80ca2d589, type: 2}
   playerManager: {fileID: 11400000, guid: d65181d1b28d0124e8a60b0521c33d40, type: 2}
+  options: {fileID: 11400000, guid: 6d04bed22494c5f409e3bd515bdf471a, type: 2}
   fallBackManager: {fileID: 2689157427190165035}
   rb: {fileID: 4593920025342268713}
   animator: {fileID: 2530234779488140016}
@@ -754,9 +755,10 @@ MonoBehaviour:
   groundCheckDistance: 0.05
   jumpForce: 5
   aimSensitivity: 0.001
-  invincible: 0
   maxPitch: 89
   minPitch: -89
+  invincible: 0
+  allowSuicideOnEnter: 0
 --- !u!153 &4593920025342268719
 ConfigurableJoint:
   m_ObjectHideFlags: 0
