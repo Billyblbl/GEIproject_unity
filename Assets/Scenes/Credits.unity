@@ -621,6 +621,8 @@ MonoBehaviour:
     scenePath: Assets/Scenes/MainMenu.unity
   loadSceneMode: 0
   requestChannel: {fileID: 11400000, guid: c17b4459f517b8e4ba3868d0c690ee55, type: 2}
+  fadeIn: 0
+  fadeOut: 0
 --- !u!1 &1785001901
 GameObject:
   m_ObjectHideFlags: 0

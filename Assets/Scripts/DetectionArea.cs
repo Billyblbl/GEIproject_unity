@@ -47,7 +47,7 @@ public class DetectionArea<T> : MonoBehaviour where T : MonoBehaviour {
 
 	private void Update() {
 		_detectedObjects.RemoveAll(obj => obj == null);
-		if (filter != null) foreach (var obj in _detectedObjects.FindAll(obj => !filter(obj))) {
+		if (filter != null) foreach (var obj in _detectedObjects.FindAll(obj => !filter(obj) || !obj.GetComponent<Collider>().enabled)) {
 			_detectedObjects.Remove(obj);
 			ExitArea?.Invoke(obj);
 		}

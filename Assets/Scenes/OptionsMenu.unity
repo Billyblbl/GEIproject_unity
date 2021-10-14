@@ -440,6 +440,8 @@ MonoBehaviour:
     scenePath: Assets/Scenes/MainMenu.unity
   loadSceneMode: 0
   requestChannel: {fileID: 11400000, guid: c17b4459f517b8e4ba3868d0c690ee55, type: 2}
+  fadeIn: 0
+  fadeOut: 0
 --- !u!114 &1598055969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,6 +684,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2077268657307164562, guid: f8148f5f37a9d0848b82b7c22807b4f7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077268657307164562, guid: f8148f5f37a9d0848b82b7c22807b4f7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -826,7 +832,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2077268659254293085, guid: f8148f5f37a9d0848b82b7c22807b4f7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077268659254293085, guid: f8148f5f37a9d0848b82b7c22807b4f7, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077268659254293085, guid: f8148f5f37a9d0848b82b7c22807b4f7, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
