@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
 	[Header("Managers")]
 	public GlobalInterface<UIController>	ui;
 	public GlobalInterface<PlayerManager>	playerManager;
+	public PlayerManager fallBackManager;
 
 	[Header("Components")]
 	public Rigidbody			rb = null;
@@ -85,6 +86,11 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	private void Update() {
+		if (playerManager == null || playerManager.currentInstance == null) {
+			fallBackManager.gameObject.SetActive(true);
+			fallBackManager.transform.parent = null;
+		}
+
 		movementInputVec.x = Input.GetAxisRaw("Horizontal");
 		movementInputVec.y = Input.GetAxisRaw("Vertical");
 		aimInputVec.x = Input.GetAxis("MouseX");

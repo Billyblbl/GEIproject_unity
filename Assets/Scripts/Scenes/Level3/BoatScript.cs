@@ -2,21 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoatScript : MonoBehaviour
-{    
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player"){
-            other.transform.parent = transform;
-            var animator = GetComponent<Animator>();
-            animator.Play("Boat");
-        }
-    }
+public class BoatScript : MonoBehaviour {
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player"){
-            other.transform.parent = null;
-        }
-    }
+	public Transform	start;
+	public Transform	end;
+	public float		traverseTime = 120f;
+
+	float				traverseStart;
+	bool				traversing = false;
+
+	private void Update() {
+
+		if (Time.time > traverseStart + traverseTime)
+			traversing = false;
+
+		if (traversing) {
+			var advance = Mathf.InverseLerp(traverseStart, traverseStart + traverseTime, Time.time);
+			transform.position = Vector3.Lerp(start.position, end.position, advance);
+		}
+
+	}
+
+	private void OnTriggerEnter(Collider other)	{
+		if (other.gameObject.tag == "Player"){
+			other.transform.parent = transform;
+			traverseStart = Time.time;
+			traversing = true;
+		}
+	}
+
+	private void OnTriggerExit(Collider other) {
+		if (other.gameObject.tag == "Player"){
+			other.transform.parent = null;
+		}
+	}
 }
