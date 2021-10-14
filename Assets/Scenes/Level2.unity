@@ -25112,8 +25112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target:
-    sceneAsset: {fileID: 102900000, guid: 6618b5bfc0c823244b07aa4b54757d60, type: 3}
-    scenePath: Assets/Scenes/AI Playground.unity
+    sceneAsset: {fileID: 102900000, guid: 26ac777a1e53d054d9a04666583b9f08, type: 3}
+    scenePath: Assets/Scenes/Level3.unity
   loadSceneMode: 0
   requestChannel: {fileID: 11400000, guid: c17b4459f517b8e4ba3868d0c690ee55, type: 2}
   fadeIn: 1
@@ -26347,7 +26347,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh47560
+  m_Name: pb_Mesh132662
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

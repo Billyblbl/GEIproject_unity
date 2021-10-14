@@ -26,8 +26,10 @@ public class BoatScript : MonoBehaviour {
 	private void OnTriggerEnter(Collider other)	{
 		if (other.gameObject.tag == "Player"){
 			other.transform.parent = transform;
-			traverseStart = Time.time;
-			traversing = true;
+			if (!traversing) {
+				traverseStart = Time.time;
+				traversing = true;
+			}
 		}
 	}
 

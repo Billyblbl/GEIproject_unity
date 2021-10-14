@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour {
 	public float jumpForce = 1f;
 	public float aimSensitivity = 1f;
 
+	[Tooltip("For debug")]
+	public bool	invincible = false;
+
 	[Range(-89.999999999f, 89.999999999f)] public float maxPitch = 89.999999999f;
 	[Range(-89.999999999f, 89.999999999f)] public float minPitch = -89.999999999f;
 
@@ -51,18 +54,13 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public bool	alive { get => _alive; set {
-		_alive = value;
-		animator.SetTrigger(alive ? "Reset" : "Die");
-		// lantern.angularXMotion = alive ? ConfigurableJointMotion.Limited : ConfigurableJointMotion.Free;
-		// lantern.angularYMotion = alive ? ConfigurableJointMotion.Limited : ConfigurableJointMotion.Free;
-		// lantern.angularZMotion = alive ? ConfigurableJointMotion.Limited : ConfigurableJointMotion.Free;
-		// lantern.xMotion = alive ? ConfigurableJointMotion.Locked : ConfigurableJointMotion.Free;
-		// lantern.yMotion = alive ? ConfigurableJointMotion.Locked : ConfigurableJointMotion.Free;
-		// lantern.zMotion = alive ? ConfigurableJointMotion.Locked : ConfigurableJointMotion.Free;
-		if (lantern.connectedBody) lantern.connectedBody.transform.parent = alive ? transform : null;
-		lantern.connectedBody = null;
-		playerManager.currentInstance.lives--;
-		// GameManager.globalInstance.Fade();
+		if (!invincible && alive != value) {
+			_alive = value;
+			animator.SetTrigger(alive ? "Reset" : "Die");
+			if (lantern.connectedBody) lantern.connectedBody.transform.parent = alive ? transform : null;
+			lantern.connectedBody = null;
+			playerManager.currentInstance.lives--;
+		}
 	}}
 	public bool grounded { get {
 		if (Time.time != lastGroundCheck)
