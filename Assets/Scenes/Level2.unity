@@ -21535,7 +21535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4593920025342268718, guid: d290bce7f8e99a0439a5e843fe3b8c42, type: 3}
       propertyPath: invincible
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4593920025342268719, guid: d290bce7f8e99a0439a5e843fe3b8c42, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -21750,7 +21750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &843809143
 Light:
   m_ObjectHideFlags: 0

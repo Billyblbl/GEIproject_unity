@@ -638,7 +638,6 @@ GameObject:
   - component: {fileID: 4593920025342268712}
   - component: {fileID: 4593920025342268715}
   - component: {fileID: 4593920025342268714}
-  - component: {fileID: 4593920025342268885}
   - component: {fileID: 4593920025342268713}
   - component: {fileID: 4593920025342268718}
   - component: {fileID: 4593920025342268719}
@@ -716,19 +715,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4593920025342268885
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4593920025342268884}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4593920025342268713
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -768,6 +754,7 @@ MonoBehaviour:
   groundCheckDistance: 0.05
   jumpForce: 5
   aimSensitivity: 0.001
+  invincible: 0
   maxPitch: 89
   minPitch: -89
 --- !u!153 &4593920025342268719
