@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void LoadLevel(SceneTransition transition) {
-		StartCoroutine(LoadLevelAsync(transition));
+		StartCoroutine(LoadLevelAsync(transition, transition.fadeOut, transition.fadeIn));
 	}
 
 	public void ExitGame() {
@@ -40,18 +40,16 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public IEnumerator LoadLevelAsync(SceneTransition transition) {
+	public IEnumerator LoadLevelAsync(SceneTransition transition, bool fadeOut, bool fadeIn) {
 		Debug.Log("Starting transition operation");
 
-		if (fadeLayer)
+		if (fadeLayer && fadeOut)
 			yield return Fade();
-		else
-			Debug.LogWarning("No fading layer");
 
 		var operation = SceneManager.LoadSceneAsync(transition.target, transition.loadSceneMode);
 		while (!operation.isDone) yield return null;
 
-		if (fadeLayer)
+		if (fadeLayer && fadeIn)
 			yield return Fade(true);
 
 		yield return null;

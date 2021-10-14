@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -783,6 +783,8 @@ MonoBehaviour:
     scenePath: Assets/Scenes/Credits.unity
   loadSceneMode: 0
   requestChannel: {fileID: 11400000, guid: c17b4459f517b8e4ba3868d0c690ee55, type: 2}
+  fadeIn: 0
+  fadeOut: 0
 --- !u!1 &437995094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,6 +1365,8 @@ MonoBehaviour:
     scenePath: Assets/Scenes/OptionsMenu.unity
   loadSceneMode: 0
   requestChannel: {fileID: 11400000, guid: c17b4459f517b8e4ba3868d0c690ee55, type: 2}
+  fadeIn: 0
+  fadeOut: 0
 --- !u!1 &1733729103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,7 +1651,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target:
-    sceneAsset: {fileID: 102900000, guid: 231ae250ed9936e43b79493d449f85fc, type: 3}
-    scenePath: Assets/Scenes/Playground.unity
+    sceneAsset: {fileID: 102900000, guid: 73dd9f0fde14b6345a462078d24d187d, type: 3}
+    scenePath: Assets/Scenes/Level2.unity
   loadSceneMode: 0
   requestChannel: {fileID: 11400000, guid: c17b4459f517b8e4ba3868d0c690ee55, type: 2}
+  fadeIn: 1
+  fadeOut: 0

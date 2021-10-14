@@ -37,12 +37,15 @@ public class PlayerController : MonoBehaviour {
 	//@By(billyblbl 13/10/2021@02:08)
 	//@Note current implementation assumes only 1 Interactable object can be in range at once, level design MUST reflet that
 	public void OnInteractableObjectInRange(Interactable obj) {
-		if (ui.currentInstance) ui.currentInstance.presentOnPrompt(KeyCode.E, obj.name);
+		if (ui.currentInstance) ui.currentInstance.presentOnPrompt(KeyCode.E, obj.prompt);
 		currentPromptedInterraction = obj;
+		currentPromptedInterraction.OnDisableInteract.AddListener(inter => OnInteractableObjectOutOfRange(inter));
 	}
 
 	public void OnInteractableObjectOutOfRange(Interactable obj) {
 		if (ui.currentInstance) ui.currentInstance.prompt.enabled = false;
+		if (currentPromptedInterraction)
+			currentPromptedInterraction.OnDisableInteract.RemoveAllListeners();
 		currentPromptedInterraction = null;
 	}
 

@@ -13,6 +13,9 @@ public class PlayerManager : MonoBehaviour {
 		if (ui.currentInstance) ui.currentInstance.displayedLives = lives;
 	}}
 
+	[Header("Gameplay data")]
+	public bool hasExitKey = false;
+
 	public void Respawn() {
 		Destroy(playerEntity.gameObject);
 		playerEntity = Instantiate(playerPrefab, currentCheckPoint.position, currentCheckPoint.rotation);

@@ -665,6 +665,8 @@ MonoBehaviour:
     scenePath: Assets/Scenes/MainMenu.unity
   loadSceneMode: 0
   requestChannel: {fileID: 11400000, guid: c17b4459f517b8e4ba3868d0c690ee55, type: 2}
+  fadeIn: 0
+  fadeOut: 1
 --- !u!850595691 &347382742
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -1167,6 +1169,8 @@ MonoBehaviour:
     scenePath: Assets/Scenes/MainMenu.unity
   loadSceneMode: 0
   requestChannel: {fileID: 11400000, guid: c17b4459f517b8e4ba3868d0c690ee55, type: 2}
+  fadeIn: 1
+  fadeOut: 1
 --- !u!114 &783137764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3011,5 +3015,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c743ccae3e9334980eb39f4feeb1a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  root: {fileID: 1792174724}
-  options: {fileID: 51903721}
