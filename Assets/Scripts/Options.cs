@@ -13,6 +13,13 @@ public class Options : MonoBehaviour {
 	};
 
 	public float 			masterVolume = 1f;
+	public float			luminosity = 0.25f;
+
+	private void Start() {
+		// Debug.Log(string.Format("master volume = {0}", masterVolume));
+		OnMasterVolumeChanged();
+		OnLuminosityChanged();
+	}
 	public KeyboardConfig	controlsScheme = KeyboardConfig.AZERTY;
 
 	// public UnityEvent<Options>	OnOptionsChanged;
@@ -24,6 +31,10 @@ public class Options : MonoBehaviour {
 
 	public void OnMasterVolumeChanged() {
 		AudioListener.volume = masterVolume;
+	}
+
+	public void OnLuminosityChanged() {
+		RenderSettings.ambientLight = new Color(luminosity, luminosity, luminosity);
 	}
 
 	// private void Update() {
