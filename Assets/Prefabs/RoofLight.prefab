@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7879711101980746664}
   - component: {fileID: 9158348809005634909}
   - component: {fileID: 4492683390544547133}
-  - component: {fileID: 3889232172528034321}
   m_Layer: 0
   m_Name: BubbleLight
   m_TagString: Untagged
@@ -8598,20 +8597,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6839771983654463427}
-  m_Mesh: {fileID: 0}
---- !u!64 &3889232172528034321
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6839771983654463427}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &8958476892334564314
 GameObject:

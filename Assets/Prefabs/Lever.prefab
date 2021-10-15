@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8898232352600046823}
   - component: {fileID: 8898232352600046820}
   - component: {fileID: 8898232352600046821}
-  - component: {fileID: 8898232352600046842}
   m_Layer: 0
   m_Name: LeverMesh
   m_TagString: Untagged
@@ -4108,20 +4107,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8898232352600046840}
   m_Mesh: {fileID: 0}
---- !u!64 &8898232352600046842
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8898232352600046840}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &8898232353447403635
 GameObject:
   m_ObjectHideFlags: 0
@@ -4133,6 +4118,8 @@ GameObject:
   - component: {fileID: 8898232353447403634}
   - component: {fileID: 8898232353447403644}
   - component: {fileID: 8898232353447403645}
+  - component: {fileID: 1273137456875358551}
+  - component: {fileID: 1887827565268782757}
   m_Layer: 0
   m_Name: Lever
   m_TagString: Untagged
@@ -4149,7 +4136,7 @@ Transform:
   m_GameObject: {fileID: 8898232353447403635}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1, y: 1.5, z: 2.5}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 8898232353639164157}
   - {fileID: 8898232354041113205}
@@ -4188,6 +4175,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 860493c13d3cdc843bbc2e1372c0e8ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1273137456875358551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8898232353447403635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a32475e7f85ea547b3d39cc84bea345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prompt: Level
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDisableInteract:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &1887827565268782757
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8898232353447403635}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 1, z: 0.3}
+  m_Center: {x: 0.1, y: 0.5, z: -0.15}
 --- !u!1 &8898232353639164146
 GameObject:
   m_ObjectHideFlags: 0
@@ -4231,7 +4250,6 @@ GameObject:
   - component: {fileID: 8898232354041113201}
   - component: {fileID: 8898232354041113206}
   - component: {fileID: 8898232354041113207}
-  - component: {fileID: 8898232354041113204}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -5052,20 +5070,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8898232354041113162}
   m_Mesh: {fileID: 0}
---- !u!64 &8898232354041113204
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8898232354041113162}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1001 &7879128032319193931
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5154,6 +5158,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1595565221155832305, guid: da4a5b05b592d8d41a612804c433ee62, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1733841001913547838, guid: da4a5b05b592d8d41a612804c433ee62, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4991816208333743948, guid: da4a5b05b592d8d41a612804c433ee62, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595284920673620927, guid: da4a5b05b592d8d41a612804c433ee62, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}

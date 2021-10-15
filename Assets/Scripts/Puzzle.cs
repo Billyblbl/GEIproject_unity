@@ -8,6 +8,7 @@ public class Puzzle : MonoBehaviour {
 	[System.Serializable] public struct State {
 		public Animator		animator;
 		public Vector2Int	coord;
+		public bool			initial;
 	}
 
 	public List<State>	states;
@@ -21,10 +22,10 @@ public class Puzzle : MonoBehaviour {
 		foreach(var state in states) {
 			grid[state.coord.x, state.coord.y] = (
 				state.animator,
-				state.animator.GetCurrentAnimatorStateInfo(0).IsName("On")
+				state.initial
 			);
+			if (state.initial) state.animator.SetTrigger("Toggle");
 		}
-		Debug.Log(GetComponent<MeshFilter>().mesh.vertexCount);
 	}
 
 	static readonly Vector2Int[] neighboors = new Vector2Int[] {
@@ -33,6 +34,11 @@ public class Puzzle : MonoBehaviour {
 		Vector2Int.right,
 		Vector2Int.up
 	};
+
+	public void OnLeverInteract(Interactable lever) {
+		var animator = lever.GetComponent<Animator>();
+		OnCellInteract(states.Find(state => state.animator == animator).coord);
+	}
 
 	public void OnCellInteract(Vector2Int cellCoord) {
 
@@ -47,6 +53,13 @@ public class Puzzle : MonoBehaviour {
 				grid[neighboor.x, neighboor.y].animator.SetTrigger("Toggle");
 				grid[neighboor.x, neighboor.y].state = !grid[neighboor.x, neighboor.y].state;
 			}
+		}
+
+		{
+			int count = 0;
+			foreach(var cell in grid)
+				count += cell.state ? 1 : 0;
+			Debug.Log(string.Format("On : {0}, Off : {1}", count, grid.Length - count));
 		}
 
 		if (isSolved) OnSolved?.Invoke();

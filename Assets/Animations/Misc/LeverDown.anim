@@ -42,7 +42,18 @@ AnimationClip:
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
-  m_PPtrCurves: []
+  m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 2100000, guid: f4e1817c3baccb94081fab02937cbf86, type: 2}
+    - time: 0.51666665
+      value: {fileID: 2100000, guid: 99631886f5876c74dbe9de67c9ff3784, type: 2}
+    - time: 1
+      value: {fileID: 2100000, guid: 99631886f5876c74dbe9de67c9ff3784, type: 2}
+    attribute: m_Materials.Array.data[0]
+    path: LeverIndictor/Icosphere
+    classID: 23
+    script: {fileID: 0}
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
@@ -57,18 +68,28 @@ AnimationClip:
       typeID: 4
       customType: 4
       isPPtrCurve: 0
-    pptrCurveMapping: []
+    - serializedVersion: 2
+      path: 2082414720
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 23
+      customType: 21
+      isPPtrCurve: 1
+    pptrCurveMapping:
+    - {fileID: 2100000, guid: f4e1817c3baccb94081fab02937cbf86, type: 2}
+    - {fileID: 2100000, guid: 99631886f5876c74dbe9de67c9ff3784, type: 2}
+    - {fileID: 2100000, guid: 99631886f5876c74dbe9de67c9ff3784, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 1.0166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0

@@ -21,14 +21,12 @@ public class MonsterAI : MonoBehaviour
 	bool attacking = false;
 
 	public void OnPlayerInRange() {
-		Debug.Log("In range");
 		// character.Move(Vector3.zero, false, false);
 		attacking = true;
 		navMeshAgent.destination = transform.position;
 	}
 
 	public void OnPlayerOutOfRange() {
-		Debug.Log("Out of range");
 		attacking = false;
 	}
 
@@ -54,7 +52,7 @@ public class MonsterAI : MonoBehaviour
 		var forward = transform.InverseTransformDirection(navMeshAgent.desiredVelocity).z;
 		var turn = Vector3.SignedAngle(transform.forward, navMeshAgent.desiredVelocity, Vector3.up);
 
-		Debug.Log(string.Format("Forward {0}, Turn {1}", forward, turn));
+		// Debug.Log(string.Format("Forward {0}, Turn {1}", forward, turn));
 
 		animator.SetFloat("Forward", forward, 0.1f, Time.deltaTime);
 		animator.SetFloat("Turn", turn, 0.1f, Time.deltaTime);
@@ -68,7 +66,12 @@ public class MonsterAI : MonoBehaviour
 		}
 		canJump = !navMeshAgent.isOnOffMeshLink;
 
-		if (!playerManager.currentInstance.playerEntity.alive) return;
+		if (
+			!playerManager ||
+			!playerManager.currentInstance ||
+			!playerManager.currentInstance.playerEntity ||
+			!playerManager.currentInstance.playerEntity.alive
+		) return;
 		if (!attacking) {
 			navMeshAgent.destination = playerManager.currentInstance.playerEntity.transform.position;
 		} else {
