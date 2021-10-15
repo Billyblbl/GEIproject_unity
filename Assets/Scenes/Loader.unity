@@ -2294,7 +2294,7 @@ MonoBehaviour:
   slot: {fileID: 11400000, guid: d65181d1b28d0124e8a60b0521c33d40, type: 2}
   playerEntity: {fileID: 0}
   ui: {fileID: 11400000, guid: 43a4a456dddd2d54b89c62f80ca2d589, type: 2}
-  loseScreen: {fileID: 0}
+  loseScreen: {fileID: 1835137468}
   _lives: 3
   OnDeath:
     m_PersistentCalls:
