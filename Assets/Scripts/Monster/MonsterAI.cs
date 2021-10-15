@@ -103,7 +103,6 @@ public class MonsterAI : MonoBehaviour
 			}
 			case BehaviorState.REMOVING_OBSTACLE: break;
 			case BehaviorState.IDLE: {
-				Debug.Log("IDLE, should move to CHASING");
 				if (
 					playerManager &&
 					playerManager.currentInstance &&

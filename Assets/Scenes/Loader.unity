@@ -2092,6 +2092,8 @@ GameObject:
   - component: {fileID: 1835137464}
   - component: {fileID: 1835137465}
   - component: {fileID: 1835137466}
+  - component: {fileID: 1835137467}
+  - component: {fileID: 1835137468}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -2277,6 +2279,46 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1835137467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835137460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e5563e1b13cb8746b4399363f1b8d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot: {fileID: 11400000, guid: d65181d1b28d0124e8a60b0521c33d40, type: 2}
+  playerEntity: {fileID: 0}
+  ui: {fileID: 11400000, guid: 43a4a456dddd2d54b89c62f80ca2d589, type: 2}
+  backToMainMenu: {fileID: 1835137468}
+  _lives: 3
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  hasExitKey: 0
+--- !u!114 &1835137468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835137460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60a68414c8da7534494a555165f11888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target:
+    sceneAsset: {fileID: 102900000, guid: 525b87d99a45f524f923a5641fb28375, type: 3}
+    scenePath: Assets/Scenes/MainMenu.unity
+  loadSceneMode: 0
+  requestChannel: {fileID: 11400000, guid: c17b4459f517b8e4ba3868d0c690ee55, type: 2}
+  fadeIn: 1
+  fadeOut: 1
 --- !u!1 &1868450905
 GameObject:
   m_ObjectHideFlags: 0

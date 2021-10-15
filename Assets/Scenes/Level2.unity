@@ -19559,17 +19559,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1130337985163010087, guid: 42b5e79a3b3469d4789e777f888ae79f, type: 3}
   m_PrefabInstance: {fileID: 1191374965}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &328988452 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4593920025342268718, guid: d290bce7f8e99a0439a5e843fe3b8c42, type: 3}
-  m_PrefabInstance: {fileID: 712333629}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 192c7f71b0120124d9af1fbedae2cae3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &328988457 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4593920025342268712, guid: d290bce7f8e99a0439a5e843fe3b8c42, type: 3}
@@ -21051,7 +21040,7 @@ Transform:
   m_LocalScale: {x: 50, y: 1, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &641375918
 PrefabInstance:
@@ -28512,59 +28501,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &2109478779
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2109478781}
-  - component: {fileID: 2109478780}
-  m_Layer: 0
-  m_Name: SceneManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2109478780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2109478779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e5563e1b13cb8746b4399363f1b8d36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slot: {fileID: 11400000, guid: d65181d1b28d0124e8a60b0521c33d40, type: 2}
-  playerPrefab: {fileID: 4593920025342268718, guid: d290bce7f8e99a0439a5e843fe3b8c42, type: 3}
-  playerEntity: {fileID: 328988452}
-  currentCheckPoint: {fileID: 0}
-  ui: {fileID: 11400000, guid: 43a4a456dddd2d54b89c62f80ca2d589, type: 2}
-  _lives: 3
-  OnRespawn:
-    m_PersistentCalls:
-      m_Calls: []
-  hasExitKey: 0
---- !u!4 &2109478781
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2109478779}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &2109986263
 Mesh:
   m_ObjectHideFlags: 0

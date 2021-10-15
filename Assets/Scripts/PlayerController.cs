@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour {
 	public GlobalInterface<UIController>	ui;
 	public GlobalInterface<PlayerManager>	playerManager;
 	public GlobalInterface<Options>			options;
-	public PlayerManager fallBackManager;
 
 	[Header("Components")]
 	public Rigidbody			rb = null;
@@ -39,7 +38,7 @@ public class PlayerController : MonoBehaviour {
 
 	[Header("For debug")]
 	public bool	invincible = false;
-	public bool allowSuicideOnEnter = false;
+	public bool enableSuicideOnEnter = false;
 
 	private Interactable	currentPromptedInterraction = null;
 
@@ -77,16 +76,15 @@ public class PlayerController : MonoBehaviour {
 
 	//TODO move cursor stuff in some UI manager thing
 	private void Start() {
+		ui.currentInstance.prompt.enabled = false;
+		playerManager.currentInstance.playerEntity = this;
 		GetComponent<Renderer>().enabled = false;
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
 	}
 
 	public void OnDeath() {
-		if (playerManager.currentInstance.lives > 0)
-			playerManager.currentInstance.Respawn();
-		else
-			SceneManager.LoadScene(SceneManager.GetActiveScene().path, LoadSceneMode.Single);
+		playerManager.currentInstance.Die(SceneManager.GetActiveScene().path);
 	}
 
 	void ScanInteractableRange() {
@@ -116,7 +114,7 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Space) && grounded)
 			rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
 
-		if (allowSuicideOnEnter && Input.GetKeyDown(KeyCode.Return)) alive = false;
+		if (enableSuicideOnEnter && Input.GetKeyDown(KeyCode.Return)) alive = false;
 
 		if (Input.GetKeyDown(KeyCode.E) && currentPromptedInterraction != null) {
 			animator.SetTrigger("Interact");
