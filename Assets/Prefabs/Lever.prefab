@@ -4227,11 +4227,11 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: ecb4eefdd9ec2244cb65f7a1ec5c0128, type: 3}
     playOnAwake: 0
     isSound3D: 1
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     dopplerLevel: 0
-    minDistance: 0
-    maxDistance: 0
+    minDistance: 0.1
+    maxDistance: 3
 --- !u!1 &8898232353639164146
 GameObject:
   m_ObjectHideFlags: 0

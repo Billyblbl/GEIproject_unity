@@ -20,15 +20,10 @@ public class LeverBehavior : MonoBehaviour
         
     }
 
-    private void LeverUp()
+    private void LeverSound()
     {
-        animator.Play("LeverUP");
-
-    }
-
-    private void LeverDown()
-    {
-        animator.Play("LeverDown");
+        var audioRig = GetComponent<AudioRig>();
+        audioRig.Play("LeverSound");
     }
 
 }

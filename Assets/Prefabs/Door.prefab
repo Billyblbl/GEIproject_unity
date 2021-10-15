@@ -2939,6 +2939,7 @@ GameObject:
   - component: {fileID: 2782378966662765510}
   - component: {fileID: 1859445054778931567}
   - component: {fileID: 4925914024473181352}
+  - component: {fileID: 7389204784332864946}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -3023,6 +3024,41 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.94, y: 2.25, z: 2}
   m_Center: {x: -0.27, y: 1.24, z: -1}
+--- !u!114 &7389204784332864946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7198757030414142114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e31fa94ed5b404994f497c2b425086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSources:
+  - name: DoorBurst
+    audioSource: {fileID: 0}
+    audioSourceObject: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: d9e0b1c854805be4eac78c1e1ef5484b, type: 3}
+    playOnAwake: 0
+    isSound3D: 1
+    volume: 1
+    pitch: 1
+    dopplerLevel: 0
+    minDistance: 1
+    maxDistance: 5
+  - name: DoorKnock
+    audioSource: {fileID: 0}
+    audioSourceObject: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: eeb665358151775459d022a0b245db2c, type: 3}
+    playOnAwake: 0
+    isSound3D: 1
+    volume: 1
+    pitch: 1
+    dopplerLevel: 0
+    minDistance: 1
+    maxDistance: 5
 --- !u!1 &7252983967893598159
 GameObject:
   m_ObjectHideFlags: 0

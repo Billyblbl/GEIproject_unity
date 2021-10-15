@@ -10,6 +10,11 @@ public class DoorController : MonoBehaviour {
 	float removingStart = 0f;
 	bool	removing = false;
 
+	private	AudioRig audioRig;
+
+	private void Awake() {
+		audioRig = GetComponent<AudioRig>();
+	}
 	public void MonsterStartRemoving() {
 		removing = true;
 		removingStart = Time.time;
@@ -31,4 +36,13 @@ public class DoorController : MonoBehaviour {
 			}
 		}
 	}
+	private void DoorBurst()
+    {
+        audioRig.Play("DoorBurst");
+    }
+
+		private void DoorKnock()
+    {
+        audioRig.Play("DoorKnock");
+    }
 }
