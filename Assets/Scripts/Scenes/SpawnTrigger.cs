@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SpawnTrigger : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class SpawnTrigger : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             monster.SetActive(true);
+			OnMonsterSpawn?.Invoke();
         }
     }
+
+	public UnityEvent	OnMonsterSpawn;
 }
