@@ -4120,6 +4120,7 @@ GameObject:
   - component: {fileID: 8898232353447403645}
   - component: {fileID: 1273137456875358551}
   - component: {fileID: 1887827565268782757}
+  - component: {fileID: 2802456144658187289}
   m_Layer: 0
   m_Name: Lever
   m_TagString: Untagged
@@ -4207,6 +4208,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 1, z: 0.3}
   m_Center: {x: 0.1, y: 0.5, z: -0.15}
+--- !u!114 &2802456144658187289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8898232353447403635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e31fa94ed5b404994f497c2b425086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSources:
+  - name: LeverSound
+    audioSource: {fileID: 0}
+    audioSourceObject: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: ecb4eefdd9ec2244cb65f7a1ec5c0128, type: 3}
+    playOnAwake: 0
+    isSound3D: 1
+    volume: 0
+    pitch: 0
+    dopplerLevel: 0
+    minDistance: 0
+    maxDistance: 0
 --- !u!1 &8898232353639164146
 GameObject:
   m_ObjectHideFlags: 0
