@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
 	[Header("Managers")]
 	public GlobalInterface<UIController>	ui;
 	public GlobalInterface<PlayerManager>	playerManager;
+	public GlobalInterface<Options>			options;
 	public PlayerManager fallBackManager;
 
 	[Header("Components")]
@@ -22,8 +23,6 @@ public class PlayerController : MonoBehaviour {
 	public float jumpForce = 1f;
 	public float aimSensitivity = 1f;
 
-	[Tooltip("For debug")]
-	public bool	invincible = false;
 
 	[Range(-89.999999999f, 89.999999999f)] public float maxPitch = 89.999999999f;
 	[Range(-89.999999999f, 89.999999999f)] public float minPitch = -89.999999999f;
@@ -35,6 +34,10 @@ public class PlayerController : MonoBehaviour {
 	bool _grounded = false;
 
 	private bool _alive = true;
+
+	[Header("For debug")]
+	public bool	invincible = false;
+	public bool allowSuicideOnEnter = false;
 
 	private Interactable	currentPromptedInterraction = null;
 
@@ -72,6 +75,7 @@ public class PlayerController : MonoBehaviour {
 
 	//TODO move cursor stuff in some UI manager thing
 	private void Start() {
+		GetComponent<Renderer>().enabled = false;
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
 	}
@@ -84,23 +88,16 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	private void Update() {
-		if (playerManager == null || playerManager.currentInstance == null) {
-			fallBackManager.gameObject.SetActive(true);
-			fallBackManager.transform.parent = null;
-		}
 
-		movementInputVec.x = Input.GetAxisRaw("Horizontal");
-		movementInputVec.y = Input.GetAxisRaw("Vertical");
+		movementInputVec.x = Input.GetAxisRaw(string.Format("Horizontal{0}", options.currentInstance.controlsScheme));
+		movementInputVec.y = Input.GetAxisRaw(string.Format("Vertical{0}", options.currentInstance.controlsScheme));
 		aimInputVec.x = Input.GetAxis("MouseX");
 		aimInputVec.y = Input.GetAxis("MouseY");
 
 		if (Input.GetKeyDown(KeyCode.Space) && grounded)
 			rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
 
-		//TODO damage system
-		if (Input.GetKeyDown(KeyCode.Return)) {
-			alive = false;
-		}
+		if (allowSuicideOnEnter && Input.GetKeyDown(KeyCode.Return)) alive = false;
 
 		if (Input.GetKeyDown(KeyCode.E) && currentPromptedInterraction != null) {
 			animator.SetTrigger("Interact");
