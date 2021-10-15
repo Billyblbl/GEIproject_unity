@@ -44,7 +44,7 @@ public class UIController : MonoBehaviour {
 		timerStart = Time.time;
 	}
 
-	float timerStart = 0f;
+	[HideInInspector] public float timerStart = 0f;
 	float timerPause = 0f;
 
 	private void Update() {

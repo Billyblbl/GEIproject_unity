@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour {
 	public GlobalInterface<UIController>	ui = null;
 
 	//TODO lose screen
-	public SceneTransition					backToMainMenu = null;
+	public SceneTransition					loseScreen = null;
 	[SerializeField][Range(0,3)] private int _lives = 3;
 	public int lives { get => _lives; set {
 		_lives = value;
@@ -23,16 +23,20 @@ public class PlayerManager : MonoBehaviour {
 
 	public void Die(string path) {
 		OnDeath?.Invoke(playerEntity);
-		if (lives == 0) ResetGame();
+		if (lives == 0) Lose();
 		SceneManager.LoadScene(path, LoadSceneMode.Single);
+	}
+
+	public void Lose() {
+		ResetGame();
+		loseScreen.request();
 	}
 
 	public void ResetGame() {
 		lives = 3;
 		hasExitKey = false;
-		Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Locked;
-		backToMainMenu.request();
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.Confined;
 	}
 
 	public void Respawn() {

@@ -2294,7 +2294,7 @@ MonoBehaviour:
   slot: {fileID: 11400000, guid: d65181d1b28d0124e8a60b0521c33d40, type: 2}
   playerEntity: {fileID: 0}
   ui: {fileID: 11400000, guid: 43a4a456dddd2d54b89c62f80ca2d589, type: 2}
-  backToMainMenu: {fileID: 1835137468}
+  loseScreen: {fileID: 0}
   _lives: 3
   OnDeath:
     m_PersistentCalls:
@@ -2313,8 +2313,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target:
-    sceneAsset: {fileID: 102900000, guid: 525b87d99a45f524f923a5641fb28375, type: 3}
-    scenePath: Assets/Scenes/MainMenu.unity
+    sceneAsset: {fileID: 102900000, guid: b3119c8b9ded8064fa252f16f9dd65a7, type: 3}
+    scenePath: Assets/Scenes/LoseScreen.unity
   loadSceneMode: 0
   requestChannel: {fileID: 11400000, guid: c17b4459f517b8e4ba3868d0c690ee55, type: 2}
   fadeIn: 1
@@ -2874,6 +2874,7 @@ MonoBehaviour:
   - {fileID: 1658700193}
   - {fileID: 1868450908}
   - {fileID: 552721252}
+  timerStart: 0
 --- !u!1001 &2119776863
 PrefabInstance:
   m_ObjectHideFlags: 0
