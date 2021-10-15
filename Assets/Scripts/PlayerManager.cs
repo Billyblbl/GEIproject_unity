@@ -8,7 +8,6 @@ public class PlayerManager : MonoBehaviour {
 	public PlayerController					playerEntity = null;
 	public GlobalInterface<UIController>	ui = null;
 
-	//TODO lose screen
 	public SceneTransition					loseScreen = null;
 	[SerializeField][Range(0,3)] private int _lives = 3;
 	public int lives { get => _lives; set {
