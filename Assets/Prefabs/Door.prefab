@@ -30,7 +30,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.7, z: 0.10000038}
   m_LocalScale: {x: 1, y: 1, z: 0.665}
-  m_Children: []
+  m_Children:
+  - {fileID: 6162206098012176650}
   m_Father: {fileID: 6255964002063304785}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -874,7 +875,7 @@ GameObject:
   - component: {fileID: 7052789087509253696}
   - component: {fileID: 5211717527233693008}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -888,11 +889,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6154642745003144692}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.09000003, y: 1.0799999, z: -0.42000008}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.059999973, y: -0.6200001, z: 1.8496233}
+  m_LocalScale: {x: 1, y: 1, z: 1.5037594}
   m_Children: []
-  m_Father: {fileID: 1529157019034706489}
-  m_RootOrder: 2
+  m_Father: {fileID: 6188800051667537398}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4054662379943934042
 MonoBehaviour:
@@ -2936,6 +2937,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1529157019034706489}
   - component: {fileID: 2782378966662765510}
+  - component: {fileID: 1859445054778931567}
+  - component: {fileID: 4925914024473181352}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -2956,7 +2959,6 @@ Transform:
   m_Children:
   - {fileID: 78854301091984287}
   - {fileID: 6255964002063304785}
-  - {fileID: 6162206098012176650}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2979,6 +2981,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1859445054778931567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7198757030414142114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5521ef5b0d426d9439150b29867854d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2782378966662765510}
+  removalTime: 15
+  OnRemovalComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4925914024473181352}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &4925914024473181352
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7198757030414142114}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.94, y: 2.25, z: 2}
+  m_Center: {x: -0.27, y: 1.24, z: -1}
 --- !u!1 &7252983967893598159
 GameObject:
   m_ObjectHideFlags: 0

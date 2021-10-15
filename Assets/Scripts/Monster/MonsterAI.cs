@@ -18,16 +18,36 @@ public class MonsterAI : MonoBehaviour
 
 	public float attackAimAngularSpeed = 1f;
 
-	bool attacking = false;
+	// bool attacking = false;
+
+	public enum BehaviorState {
+		IDLE,
+		CHASING,
+		ATTACKING,
+		REMOVING_OBSTACLE
+	};
+
+	public BehaviorState currentBehavior = BehaviorState.IDLE;
 
 	public void OnPlayerInRange() {
 		// character.Move(Vector3.zero, false, false);
-		attacking = true;
+		currentBehavior = BehaviorState.ATTACKING;
+		// attacking = true;
 		navMeshAgent.destination = transform.position;
 	}
 
 	public void OnPlayerOutOfRange() {
-		attacking = false;
+		currentBehavior = BehaviorState.CHASING;
+	}
+
+	public void OnObstacleInRange(DoorController door) {
+		currentBehavior = BehaviorState.REMOVING_OBSTACLE;
+		navMeshAgent.destination = transform.position;
+		door.MonsterStartRemoving();
+	}
+
+	public void OnObstacleOutOfRange(DoorController door) {
+		currentBehavior = BehaviorState.CHASING;
 	}
 
 	private void Awake() {
@@ -47,8 +67,8 @@ public class MonsterAI : MonoBehaviour
 	}
 
 	bool canJump = true;
-	private void Update() {
 
+	void UpdateMovement() {
 		var forward = transform.InverseTransformDirection(navMeshAgent.desiredVelocity).z;
 		var turn = Vector3.SignedAngle(transform.forward, navMeshAgent.desiredVelocity, Vector3.up);
 
@@ -65,23 +85,39 @@ public class MonsterAI : MonoBehaviour
 			animator.SetTrigger("MeshTransitionJump");
 		}
 		canJump = !navMeshAgent.isOnOffMeshLink;
+	}
 
-		if (
-			!playerManager ||
-			!playerManager.currentInstance ||
-			!playerManager.currentInstance.playerEntity ||
-			!playerManager.currentInstance.playerEntity.alive
-		) return;
-		if (!attacking) {
-			navMeshAgent.destination = playerManager.currentInstance.playerEntity.transform.position;
-		} else {
-			if ((Time.time - lastAttack > attackCooldown)) {
-				audioManager.PlayRandom("Attack");
-				animator.SetTrigger("Attack");
-				lastAttack = Time.time;
+	void UpdateBehavior() {
+		switch (currentBehavior) {
+			case BehaviorState.ATTACKING: {
+				if ((Time.time - lastAttack > attackCooldown)) {
+					audioManager.PlayRandom("Attack");
+					animator.SetTrigger("Attack");
+					lastAttack = Time.time;
+				}
+				break;
+			}
+			case BehaviorState.CHASING: {
+				navMeshAgent.destination = playerManager.currentInstance.playerEntity.transform.position;
+				break;
+			}
+			case BehaviorState.REMOVING_OBSTACLE: break;
+			case BehaviorState.IDLE: {
+				Debug.Log("IDLE, should move to CHASING");
+				if (
+					playerManager &&
+					playerManager.currentInstance &&
+					playerManager.currentInstance.playerEntity &&
+					playerManager.currentInstance.playerEntity.alive
+				) currentBehavior = BehaviorState.CHASING;
+				break;
 			}
 		}
+	}
 
+	private void Update() {
+		UpdateMovement();
+		UpdateBehavior();
 	}
 
 	public void Spawn() {
@@ -91,10 +127,10 @@ public class MonsterAI : MonoBehaviour
 		navMeshAgent.isStopped = false;
 	}
 	public void Attack() {
-		if (playerManager.currentInstance.playerEntity.alive && attacking) {
+		if (playerManager.currentInstance.playerEntity.alive && currentBehavior == BehaviorState.ATTACKING) {
 			audioManager.Play("AttackHit");
 			playerManager.currentInstance.playerEntity.alive = false;
-			attacking = false;
+			currentBehavior = BehaviorState.IDLE;
 		}
 	}
 
