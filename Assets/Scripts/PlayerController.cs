@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour {
 	public Rigidbody			rb = null;
 	public Animator				animator;
 	public ConfigurableJoint	lantern;
+	public Transform			interactRange;
+	public Camera				cam;
 
 	[Header("Controls")]
 	public float walkSpeed = 1f;
@@ -87,7 +89,24 @@ public class PlayerController : MonoBehaviour {
 			SceneManager.LoadScene(SceneManager.GetActiveScene().path, LoadSceneMode.Single);
 	}
 
+	void ScanInteractableRange() {
+		var ray = new Ray(cam.transform.position, cam.transform.forward);
+		RaycastHit	hit;
+		Interactable interactable;
+		var inRange = Physics.Raycast(ray, out hit, Vector3.Distance(interactRange.position, cam.transform.position));
+		if (!inRange) {
+			if (currentPromptedInterraction) OnInteractableObjectOutOfRange(currentPromptedInterraction);
+		} else if (hit.collider.TryGetComponent<Interactable>(out interactable)) {
+			if (interactable != currentPromptedInterraction) {
+				OnInteractableObjectOutOfRange(currentPromptedInterraction);
+				OnInteractableObjectInRange(interactable);
+			}
+		} else if (currentPromptedInterraction) OnInteractableObjectOutOfRange(currentPromptedInterraction);
+	}
+
 	private void Update() {
+
+		ScanInteractableRange();
 
 		movementInputVec.x = Input.GetAxisRaw(string.Format("Horizontal{0}", options.currentInstance.controlsScheme));
 		movementInputVec.y = Input.GetAxisRaw(string.Format("Vertical{0}", options.currentInstance.controlsScheme));
