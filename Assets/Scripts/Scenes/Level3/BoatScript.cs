@@ -23,6 +23,11 @@ public class BoatScript : MonoBehaviour {
 
 	}
 
+	public void ResetBoat() {
+		transform.position = start.position;
+		traversing = false;
+	}
+
 	private void OnTriggerEnter(Collider other)	{
 		if (other.gameObject.tag == "Player"){
 			other.transform.parent = transform;

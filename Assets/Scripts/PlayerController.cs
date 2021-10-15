@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour {
 
 	//TODO move cursor stuff in some UI manager thing
 	private void Start() {
+		GetComponent<Renderer>().enabled = false;
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
 	}
@@ -87,10 +88,6 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	private void Update() {
-		if (playerManager == null || playerManager.currentInstance == null) {
-			fallBackManager.gameObject.SetActive(true);
-			fallBackManager.transform.parent = null;
-		}
 
 		movementInputVec.x = Input.GetAxisRaw(string.Format("Horizontal{0}", options.currentInstance.controlsScheme));
 		movementInputVec.y = Input.GetAxisRaw(string.Format("Vertical{0}", options.currentInstance.controlsScheme));

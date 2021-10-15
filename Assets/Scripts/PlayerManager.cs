@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerManager : MonoBehaviour {
 
@@ -13,12 +14,15 @@ public class PlayerManager : MonoBehaviour {
 		if (ui.currentInstance) ui.currentInstance.displayedLives = lives;
 	}}
 
+	public UnityEvent<PlayerController>	OnRespawn;
+
 	[Header("Gameplay data")]
 	public bool hasExitKey = false;
 
 	public void Respawn() {
 		Destroy(playerEntity.gameObject);
 		playerEntity = Instantiate(playerPrefab, currentCheckPoint.position, currentCheckPoint.rotation);
+		OnRespawn?.Invoke(playerEntity);
 	}
 
 	private void Awake() {
@@ -31,6 +35,7 @@ public class PlayerManager : MonoBehaviour {
 	}
 
 	private void Start() {
+		// Respawn();
 		if (!ui || !ui.currentInstance) return;
 		ui.currentInstance.displayedLives = lives;
 		ui.currentInstance.resetTimer(true);
