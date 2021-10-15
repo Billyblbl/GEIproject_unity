@@ -4195,6 +4195,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 925216893}
     m_Modifications:
+    - target: {fileID: -4169451131130756777, guid: 42b5e79a3b3469d4789e777f888ae79f, type: 3}
+      propertyPath: MaxDistance
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1130337985163010083, guid: 42b5e79a3b3469d4789e777f888ae79f, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -5321,9 +5325,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 563742423}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDisableInteract:
     m_PersistentCalls:
       m_Calls: []
+--- !u!82 &563742423 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: -4169451131130756777, guid: 42b5e79a3b3469d4789e777f888ae79f, type: 3}
+  m_PrefabInstance: {fileID: 563742419}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &570228279
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11467,7 +11488,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh55244
+  m_Name: pb_Mesh50052
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

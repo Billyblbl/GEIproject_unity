@@ -51,7 +51,7 @@ public class UIController : MonoBehaviour {
 		var currentTimer = timerRunning ? Time.time - timerStart : timerPause - timerStart;
 		var timeSpan = System.TimeSpan.FromSeconds(currentTimer);
 		timer.text = string.Format("{0:D2}:{1:D2}:{2:D2}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds/10);
-		if (Input.GetKeyDown(KeyCode.Backspace)) {
+		if (Input.GetKeyDown(Application.isEditor ? KeyCode.Backspace : KeyCode.Escape)) {
 			TogglePauseMenu();
 		}
 	}
