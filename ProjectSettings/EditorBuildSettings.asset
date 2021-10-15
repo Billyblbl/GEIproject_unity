@@ -9,12 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Loader.unity
     guid: d9848eb2005ae7943b15232a2bd63a8d
   - enabled: 1
-    path: Assets/Scenes/Playground.unity
-    guid: 231ae250ed9936e43b79493d449f85fc
-  - enabled: 1
-    path: Assets/Scenes/AI Playground.unity
-    guid: 6618b5bfc0c823244b07aa4b54757d60
-  - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 73dd9f0fde14b6345a462078d24d187d
   - enabled: 1
