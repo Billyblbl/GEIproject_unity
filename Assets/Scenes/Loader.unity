@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000002, guid: 9ce1dc29293861d4a87d57ef282b8cd5, type: 2}
+  m_LightingDataAsset: {fileID: 112000002, guid: e201e1678c71ed54aabcf81872194ab5, type: 2}
   m_LightingSettings: {fileID: 347382742}
 --- !u!196 &4
 NavMeshSettings:
@@ -662,7 +662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target:
     sceneAsset: {fileID: 102900000, guid: 525b87d99a45f524f923a5641fb28375, type: 3}
-    scenePath: Assets/Scenes/MainMenu.unity
+    scenePath: Assets/Scenes/Menu/MainMenu.unity
   loadSceneMode: 0
   requestChannel: {fileID: 11400000, guid: c17b4459f517b8e4ba3868d0c690ee55, type: 2}
   fadeIn: 0
@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target:
     sceneAsset: {fileID: 102900000, guid: 525b87d99a45f524f923a5641fb28375, type: 3}
-    scenePath: Assets/Scenes/MainMenu.unity
+    scenePath: Assets/Scenes/Menu/MainMenu.unity
   loadSceneMode: 0
   requestChannel: {fileID: 11400000, guid: c17b4459f517b8e4ba3868d0c690ee55, type: 2}
   fadeIn: 1
@@ -2131,7 +2131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initalScene:
     sceneAsset: {fileID: 102900000, guid: 525b87d99a45f524f923a5641fb28375, type: 3}
-    scenePath: Assets/Scenes/MainMenu.unity
+    scenePath: Assets/Scenes/Menu/MainMenu.unity
   fadeLayer: {fileID: 1739124173}
   fadeTime: 1
   fadeTransitionGradient:
@@ -2314,7 +2314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target:
     sceneAsset: {fileID: 102900000, guid: b3119c8b9ded8064fa252f16f9dd65a7, type: 3}
-    scenePath: Assets/Scenes/LoseScreen.unity
+    scenePath: Assets/Scenes/Menu/LoseScreen.unity
   loadSceneMode: 0
   requestChannel: {fileID: 11400000, guid: c17b4459f517b8e4ba3868d0c690ee55, type: 2}
   fadeIn: 1
