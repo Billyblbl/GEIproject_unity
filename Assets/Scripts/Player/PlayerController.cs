@@ -77,6 +77,7 @@ public class PlayerController : MonoBehaviour {
 	//TODO move cursor stuff in some UI manager thing
 	private void Start() {
 		ui.currentInstance.prompt.enabled = false;
+		if (!ui.currentInstance.timerRunning) ui.currentInstance.resetTimer(true);
 		playerManager.currentInstance.playerEntity = this;
 		GetComponent<Renderer>().enabled = false;
 		Cursor.visible = false;
@@ -84,6 +85,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void OnDeath() {
+		if (currentPromptedInterraction) OnInteractableObjectOutOfRange(currentPromptedInterraction);
 		playerManager.currentInstance.Die(SceneManager.GetActiveScene().path);
 	}
 

@@ -23,7 +23,7 @@ public class PlayerManager : MonoBehaviour {
 	public void Die(string path) {
 		OnDeath?.Invoke(playerEntity);
 		if (lives == 0) Lose();
-		SceneManager.LoadScene(path, LoadSceneMode.Single);
+		else SceneManager.LoadScene(path, LoadSceneMode.Single);
 	}
 
 	public void Lose() {
@@ -36,6 +36,10 @@ public class PlayerManager : MonoBehaviour {
 		hasExitKey = false;
 		Cursor.visible = true;
 		Cursor.lockState = CursorLockMode.Confined;
+		ui.currentInstance.displayedLives = lives;
+		ui.currentInstance.resetTimer(false);
+		ui.currentInstance.pauseMenu.gameObject.SetActive(false);
+		Time.timeScale = 1f;
 	}
 
 	public void Respawn() {
