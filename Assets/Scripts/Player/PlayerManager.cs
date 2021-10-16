@@ -9,6 +9,17 @@ public class PlayerManager : MonoBehaviour {
 	public GlobalInterface<UIController>	ui = null;
 
 	public SceneTransition					loseScreen = null;
+
+	public StringEvent						MenuModeChannel;
+	public StringEvent						GameModeChannel;
+	
+	public bool playing = false;
+
+	//Hacky stuff because i can't see playing in the options of a handler
+	public void setPlaying() => playing = true;
+	public void setNotPlaying() => playing = false;
+
+
 	[SerializeField][Range(0,3)] private int _lives = 3;
 	public int lives { get => _lives; set {
 		_lives = value;
@@ -40,6 +51,7 @@ public class PlayerManager : MonoBehaviour {
 		ui.currentInstance.resetTimer(false);
 		ui.currentInstance.pauseMenu.gameObject.SetActive(false);
 		Time.timeScale = 1f;
+		MenuModeChannel.Trigger("Menu");
 	}
 
 	public void Respawn() {
@@ -48,6 +60,7 @@ public class PlayerManager : MonoBehaviour {
 
 	private void Awake() {
 		slot.currentInstance = this;
+		MenuModeChannel.Trigger("Menu");
 	}
 
 	private void Start() {
