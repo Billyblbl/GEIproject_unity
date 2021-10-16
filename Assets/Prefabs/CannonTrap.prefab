@@ -2367,7 +2367,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: c94b40bea6dbd6746a60c00ea6844671, type: 3}
     playOnAwake: 0
     isSound3D: 0
-    volume: 0.01
+    volume: 0.005
     pitch: 1
     dopplerLevel: 0
     minDistance: 0.1
