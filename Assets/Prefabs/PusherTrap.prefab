@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2718997554095216668}
   - component: {fileID: 2718997554095216659}
   - component: {fileID: 2718997554095216658}
+  - component: {fileID: 658307630300992468}
   m_Layer: 0
   m_Name: Pusher
   m_TagString: Untagged
@@ -1461,6 +1462,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!65 &658307630300992468
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718997554095216656}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 1.5000004, z: 0.8000002}
+  m_Center: {x: -0.4, y: 0.7499992, z: -0.00000023841858}
 --- !u!1 &2718997555749886977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,8 +1489,8 @@ GameObject:
   - component: {fileID: 2718997555749886990}
   - component: {fileID: 2718997555749886989}
   - component: {fileID: 2718997555749886988}
-  - component: {fileID: 2718997555749886979}
   - component: {fileID: 2718997555749886978}
+  - component: {fileID: 8667664876674448320}
   m_Layer: 0
   m_Name: PusherTrap
   m_TagString: Untagged
@@ -2939,19 +2953,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0
---- !u!114 &2718997555749886979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2718997555749886977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e31fa94ed5b404994f497c2b425086, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSources: []
 --- !u!95 &2718997555749886978
 Animator:
   serializedVersion: 3
@@ -2971,3 +2972,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8667664876674448320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718997555749886977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e31fa94ed5b404994f497c2b425086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSources:
+  - name: DefaultAudio
+    audioSource: {fileID: 0}
+    audioSourceObject: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: a63d8cbf6f0576b428321dced273b0d8, type: 3}
+    playOnAwake: 0
+    isSound3D: 1
+    volume: 1
+    pitch: 1
+    dopplerLevel: 0
+    minDistance: 0.1
+    maxDistance: 3
