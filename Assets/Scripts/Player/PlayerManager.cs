@@ -60,11 +60,11 @@ public class PlayerManager : MonoBehaviour {
 
 	private void Awake() {
 		slot.currentInstance = this;
-		MenuModeChannel.Trigger("Menu");
 	}
 
 	private void Start() {
 		// Respawn();
+		MenuModeChannel.Trigger("Menu");
 		if (!ui || !ui.currentInstance) return;
 		ui.currentInstance.displayedLives = lives;
 		ui.currentInstance.resetTimer(true);
