@@ -77,7 +77,15 @@ public class PlayerController : MonoBehaviour {
 	//TODO move cursor stuff in some UI manager thing
 	private void Start() {
 		ui.currentInstance.prompt.enabled = false;
-		if (!ui.currentInstance.timerRunning) ui.currentInstance.resetTimer(true);
+		if (!ui.currentInstance.timerRunning) {
+			ui.currentInstance.resetTimer(true);
+		}
+
+		//Ew
+		if (!playerManager.currentInstance.playing) {
+			playerManager.currentInstance.GameModeChannel.Trigger("Game");
+			playerManager.currentInstance.playing = true;
+		}
 		playerManager.currentInstance.playerEntity = this;
 		GetComponent<Renderer>().enabled = false;
 		Cursor.visible = false;
