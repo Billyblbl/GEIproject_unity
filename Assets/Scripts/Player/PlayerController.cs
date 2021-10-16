@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour {
 		var inRange = Physics.Raycast(ray, out hit, Vector3.Distance(interactRange.position, cam.transform.position));
 		if (!inRange) {
 			if (currentPromptedInterraction) OnInteractableObjectOutOfRange(currentPromptedInterraction);
-		} else if (hit.collider.TryGetComponent<Interactable>(out interactable)) {
+		} else if (hit.collider.TryGetComponent<Interactable>(out interactable) && interactable.enabled) {
 			if (interactable != currentPromptedInterraction) {
 				OnInteractableObjectOutOfRange(currentPromptedInterraction);
 				OnInteractableObjectInRange(interactable);

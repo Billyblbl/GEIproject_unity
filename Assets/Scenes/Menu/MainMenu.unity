@@ -780,7 +780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target:
     sceneAsset: {fileID: 102900000, guid: a90cb516fafc9494dbcdd4f049c26b75, type: 3}
-    scenePath: Assets/Scenes/Credits.unity
+    scenePath: Assets/Scenes/Menu/Credits.unity
   loadSceneMode: 0
   requestChannel: {fileID: 11400000, guid: c17b4459f517b8e4ba3868d0c690ee55, type: 2}
   fadeIn: 0
@@ -1363,7 +1363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target:
     sceneAsset: {fileID: 102900000, guid: c7e30733c7d5a6e438194ee15dffd510, type: 3}
-    scenePath: Assets/Scenes/OptionsMenu.unity
+    scenePath: Assets/Scenes/Menu/OptionsMenu.unity
   loadSceneMode: 0
   requestChannel: {fileID: 11400000, guid: c17b4459f517b8e4ba3868d0c690ee55, type: 2}
   fadeIn: 0
@@ -1749,8 +1749,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target:
-    sceneAsset: {fileID: 102900000, guid: 73dd9f0fde14b6345a462078d24d187d, type: 3}
-    scenePath: Assets/Scenes/Level2.unity
+    sceneAsset: {fileID: 102900000, guid: 136c22c8a9fc0294fab883bfcaaa3a77, type: 3}
+    scenePath: Assets/Scenes/Level1/Level1.unity
   loadSceneMode: 0
   requestChannel: {fileID: 11400000, guid: c17b4459f517b8e4ba3868d0c690ee55, type: 2}
   fadeIn: 1
